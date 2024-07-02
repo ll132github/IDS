@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TextArea?>
+<GridPane fx:controller="ttts.PacketCaptureController" xmlns:fx="http://javafx.com/fxml">
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.rowSpan="1" GridPane.columnSpan="2" spacing="10">
+        <Button text="获取设备" onAction="#findAllDevices" />
+        <Label text="选择设备:" />
+        <TextField fx:id="NCid" />
+        <Button text="确认" onAction="#NCset" />
+
+
+        <Label text="黑名单ip添加:" />
+        <TextField fx:id="BLK_ip" />
+        <Label text="白名单ip添加:" />
+        <TextField fx:id="WHI_ip" />
+        <Button text="添加" onAction="#setBLK_ip" />
+
+        <Button text="开始抓包检测" onAction="#startPacketCapture" />
+
+        <Button text="停止抓包检测" onAction="#stopPacketCapture" />
+
+
+        <Label text="流量包地址:" />
+        <TextField fx:id="trafficPacketAddress" />
+        <Button text="开始分析" onAction="#startAnalysis" />
+    </VBox>
+    <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" spacing="10">
+        <Label text="源 IP:" />
+        <TextField fx:id="sourceIP" />
+        <Label text="目的 IP:" />
+        <TextField fx:id="destinationIP" />
+    </VBox>
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="0" spacing="10">
+        <Button text="筛选" onAction="#filter" />
+    </VBox>
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="2" GridPane.rowSpan="5" GridPane.columnSpan="2" >
+        <Label text="信息显示:" />
+        <TextArea fx:id="infoDisplay" editable="ture" VBox.vgrow="ALWAYS"/>
+    </VBox>
+</GridPane>
